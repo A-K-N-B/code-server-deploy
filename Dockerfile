@@ -22,9 +22,21 @@ RUN sudo chown -R coder:coder /home/coder/.local
 # You can add custom software and dependencies for your environment below
 # -----------
 
+RUN sudo apt install openjdk-17-jdk openjdk-17-jre -y
+
 # Install a VS Code extension:
 # Note: we use a different marketplace than VS Code. See https://github.com/cdr/code-server/blob/main/docs/FAQ.md#differences-compared-to-vs-code
-# RUN code-server --install-extension esbenp.prettier-vscode
+RUN code-server --install-extension esbenp.prettier-vscode
+RUN code-server --install-extension max-ss.cyberpunk
+RUN code-server --install-extension pkief.material-icon-theme
+RUN code-server --install-extension redhat.java
+RUN code-server --install-extension vscjava.vscode-java-debug
+RUN code-server --install-extension vscjava.vscode-java-dependency
+RUN code-server --install-extension vscjava.vscode-java-pack
+RUN code-server --install-extension vscjava.vscode-java-test
+RUN code-server --install-extension vscjava.vscode-java-debug
+RUN code-server --install-extension vscjava.vscode-maven
+RUN code-server --install-extension formulahendry.code-runner
 
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
